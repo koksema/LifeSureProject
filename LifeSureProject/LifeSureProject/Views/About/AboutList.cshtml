@@ -1,0 +1,112 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblAbout>
+
+@{
+    ViewBag.Title = "About List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Sayfayı genişlet (dar görünümü düzeltir) -->
+<div class="w-full max-w-none">
+
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-800">Hakkımızda</h1>
+            <p class="text-sm text-gray-500 mt-1">Kayıtları görüntüleyebilir, güncelleyebilir veya silebilirsin.</p>
+        </div>
+
+        <a href="/About/CreateAbout"
+           class="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-cyan-700 transition">
+            <i class="fa-solid fa-plus"></i>
+            Yeni Ekle
+        </a>
+    </div>
+
+    @if (ViewBag.Test != null)
+    {
+        <div class="mb-4 rounded-lg border border-gray-200 bg-white p-3 text-sm text-gray-700">
+            <span class="font-semibold">Durum:</span> @ViewBag.Test
+        </div>
+    }
+
+    <div class="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden w-full">
+        <div class="overflow-x-auto">
+            <table class="min-w-full w-full">
+                <thead class="bg-gray-50 border-b border-gray-200">
+                    <tr>
+                        <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-5 py-3 whitespace-nowrap">ID</th>
+                        <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-5 py-3 whitespace-nowrap">Görsel</th>
+                        <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-5 py-3">Başlık</th>
+                        <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-5 py-3">Açıklama</th>
+                        <th class="text-right text-xs font-semibold text-gray-500 uppercase tracking-wider px-5 py-3 whitespace-nowrap">İşlemler</th>
+                    </tr>
+                </thead>
+
+                <tbody class="divide-y divide-gray-200">
+                    @if (Model == null || !Model.Any())
+                    {
+                        <tr>
+                            <td colspan="5" class="px-5 py-10 text-center text-sm text-gray-500">
+                                Henüz kayıt yok.
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr class="hover:bg-gray-50/60 transition align-top">
+                                <td class="px-5 py-4 text-sm text-gray-700 whitespace-nowrap">@item.AboutId</td>
+
+                                <td class="px-5 py-4 whitespace-nowrap">
+                                    @if (!string.IsNullOrWhiteSpace(item.AboutImageUrl))
+                                    {
+                                        <img src="@item.AboutImageUrl"
+                                             alt="About Image"
+                                             class="h-12 w-12 rounded-lg object-cover border border-gray-200" />
+                                    }
+                                    else
+                                    {
+                                        <div class="h-12 w-12 rounded-lg border border-dashed border-gray-300 grid place-items-center text-gray-400 text-xs">
+                                            Yok
+                                        </div>
+                                    }
+                                </td>
+
+                                <td class="px-5 py-4 text-sm font-semibold text-gray-900 min-w-[220px]">
+                                    @item.AboutTitle
+                                </td>
+
+                                <td class="px-5 py-4 text-sm text-gray-600 min-w-[520px]">
+                                    @{
+                                        var desc = item.AboutDescription ?? "";
+                                        var shortDesc = desc.Length > 180 ? desc.Substring(0, 180) + "..." : desc;
+                                    }
+                                    @shortDesc
+                                </td>
+
+                                <td class="px-5 py-4 whitespace-nowrap">
+                                    <div class="flex justify-end gap-2">
+                                        <a href="/About/UpdateAbout/@item.AboutId"
+                                           class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                            Düzenle
+                                        </a>
+
+                                        <a href="/About/DeleteAbout/@item.AboutId"
+                                           onclick="return confirm('Bu kaydı silmek istediğine emin misin?');"
+                                           class="inline-flex items-center gap-2 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-semibold text-rose-700 hover:bg-rose-100 transition">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                            Sil
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+```

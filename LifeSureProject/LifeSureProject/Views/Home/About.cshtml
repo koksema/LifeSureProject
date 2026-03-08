@@ -1,0 +1,78 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblAbout>
+<div class="container-fluid bg-light about pb-5">
+    <div class="container pb-5">
+        <div class="row g-5">
+            <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="about-item-content bg-white rounded p-5 h-100">
+                    @foreach (var item in Model)
+                    {
+
+
+                        <h4 class="text-primary">Şirketimiz Hakkında</h4>
+                        <h1 class="display-4 mb-4">@item.AboutTitle</h1>
+                        <h1 class="display-4 mb-4"></h1>
+
+                        <p>
+                            @item.AboutDescription
+                        </p>
+                        <p>
+                            “Deneyimli ekibimiz, güçlü hizmet altyapımız ve müşteri memnuniyetini ön planda tutan anlayışımız sayesinde her zaman yanınızdayız. Amacımız, hayatın beklenmedik durumlarına karşı sizi ve sevdiklerinizi güvence altına almaktır.”
+                        </p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Paranızı korur ve tasarruf etmenizi sağlar.</p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Üretim ve ticari faaliyetler için güvence sunar.</p>
+                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Hayat sigortası planlarımız esnek ve kişiye özeldir.</p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Daha Fazla Bilgi</a>
+                    }
+                </div>
+            </div>
+
+            <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="bg-white rounded p-5 h-100">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-12">
+                            <div class="rounded bg-light">
+                                <img src="@Model.FirstOrDefault().AboutImageUrl" class="img-fluid rounded w-100" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="counter-item bg-light rounded p-3 h-100">
+                                <div class="counter-counting">
+                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
+                                    <span class="h1 fw-bold text-primary">+</span>
+                                </div>
+                                <h4 class="mb-0 text-dark">Sigorta Poliçemiz</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="counter-item bg-light rounded p-3 h-100">
+                                <div class="counter-counting">
+                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
+                                    <span class="h1 fw-bold text-primary">+</span>
+                                </div>
+                                <h4 class="mb-0 text-dark">Kazandığımız Ödüller</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="counter-item bg-light rounded p-3 h-100">
+                                <div class="counter-counting">
+                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
+                                    <span class="h1 fw-bold text-primary">+</span>
+                                </div>
+                                <h4 class="mb-0 text-dark">Nitelikli Temsilcilerimiz</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="counter-item bg-light rounded p-3 h-100">
+                                <div class="counter-counting">
+                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
+                                    <span class="h1 fw-bold text-primary">+</span>
+                                </div>
+                                <h4 class="mb-0 text-dark">Takım Üyelerimiz</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

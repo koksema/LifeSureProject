@@ -1,0 +1,32 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblEmployee>
+<div class="container-fluid team pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h1 class="display-4 mb-4">Ekibimizle Tanışın</h1>
+            <p class="mb-0">
+                “Deneyimli ve uzman ekibimiz, müşterilerimize en iyi hizmeti sunmak için her zaman yanınızda. Güvenilir, profesyonel ve çözüm odaklı yaklaşımımızla ihtiyaçlarınıza en uygun sigorta çözümlerini sunuyoruz.”
+            </p>
+        </div>
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="@item.EmployeePhoto" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="@item.EmployeeLinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href="@item.EmployeeInstagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-title p-4">
+                            <h4 class="mb-0">@item.EmployeeName</h4>
+                            <p class="mb-0">@item.EmployeeTitle</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

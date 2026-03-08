@@ -1,0 +1,1118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46D9CCE4-5440-48AE-ABAB-A7CA7F2AFE4E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LifeSureProject</RootNamespace>
+    <AssemblyName>LifeSureProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\SharedResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\SharedResource.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\FAQController.cs" />
+    <Compile Include="Controllers\FeatureController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\OtherFeatureController.cs" />
+    <Compile Include="Controllers\ServiceAIController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblAbout.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblContact.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblEmployee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblFeature.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblOtherFeature.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblQuestion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblService.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModels\TblTestimonial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModels\ServicesAIViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\LinkedinServices.cs" />
+    <Compile Include="ViewModels\FAQViewModel.cs" />
+    <Compile Include="ViewModels\LinkedinViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\LifeSure-1.0.0\404.html" />
+    <Content Include="Content\LifeSure-1.0.0\about.html" />
+    <Content Include="Content\LifeSure-1.0.0\blog.html" />
+    <Content Include="Content\LifeSure-1.0.0\contact.html" />
+    <Content Include="Content\LifeSure-1.0.0\css\bootstrap.min.css" />
+    <Content Include="Content\LifeSure-1.0.0\css\style.css" />
+    <Content Include="Content\LifeSure-1.0.0\FAQ.html" />
+    <Content Include="Content\LifeSure-1.0.0\feature.html" />
+    <Content Include="Content\LifeSure-1.0.0\img\about-1.png" />
+    <Content Include="Content\LifeSure-1.0.0\img\bg-breadcrumb.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\blog-1.png" />
+    <Content Include="Content\LifeSure-1.0.0\img\blog-2.png" />
+    <Content Include="Content\LifeSure-1.0.0\img\blog-3.png" />
+    <Content Include="Content\LifeSure-1.0.0\img\blog-4.png" />
+    <Content Include="Content\LifeSure-1.0.0\img\carousel-2.png" />
+    <Content Include="Content\LifeSure-1.0.0\img\contact-img.png" />
+    <Content Include="Content\LifeSure-1.0.0\img\instagram-footer-1.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\instagram-footer-2.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\instagram-footer-3.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\instagram-footer-4.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\instagram-footer-5.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\instagram-footer-6.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\team-1.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\team-2.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\team-3.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\team-4.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\testimonial-1.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\testimonial-2.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\img\testimonial-3.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\index.html" />
+    <Content Include="Content\LifeSure-1.0.0\js\main.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\animate\animate.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\animate\animate.min.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\counterup\counterup.min.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\easing\easing.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\easing\easing.min.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\lightbox\css\lightbox.min.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\lightbox\images\close.png" />
+    <Content Include="Content\LifeSure-1.0.0\lib\lightbox\images\loading.gif" />
+    <Content Include="Content\LifeSure-1.0.0\lib\lightbox\images\next.png" />
+    <Content Include="Content\LifeSure-1.0.0\lib\lightbox\images\prev.png" />
+    <Content Include="Content\LifeSure-1.0.0\lib\lightbox\js\lightbox.min.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\waypoints\waypoints.min.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\wow\wow.js" />
+    <Content Include="Content\LifeSure-1.0.0\lib\wow\wow.min.js" />
+    <Content Include="Content\LifeSure-1.0.0\LICENSE.txt" />
+    <Content Include="Content\LifeSure-1.0.0\life-insurance-website-template.jpg" />
+    <Content Include="Content\LifeSure-1.0.0\READ-ME.txt" />
+    <Content Include="Content\LifeSure-1.0.0\service.html" />
+    <Content Include="Content\LifeSure-1.0.0\team.html" />
+    <Content Include="Content\LifeSure-1.0.0\testimonial.html" />
+    <Content Include="Content\windster-1.0.0\content\authentication\sign-in.html" />
+    <Content Include="Content\windster-1.0.0\content\authentication\sign-up.html" />
+    <Content Include="Content\windster-1.0.0\content\e-commerce\products.html" />
+    <Content Include="Content\windster-1.0.0\content\pricing.html" />
+    <Content Include="Content\windster-1.0.0\content\users\list.html" />
+    <Content Include="Content\windster-1.0.0\content\_index.html" />
+    <Content Include="Content\windster-1.0.0\layouts\alias.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\analytics.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\favicons.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\footer-dashboard.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\header.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\navbar-dashboard.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\redirect.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\scripts.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\sidebar.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\skippy.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\social.html" />
+    <Content Include="Content\windster-1.0.0\layouts\partials\stylesheet.html" />
+    <Content Include="Content\windster-1.0.0\layouts\shortcodes\card.html" />
+    <Content Include="Content\windster-1.0.0\layouts\sitemap.xml" />
+    <Content Include="Content\windster-1.0.0\layouts\_default\404.html" />
+    <Content Include="Content\windster-1.0.0\layouts\_default\baseof.html" />
+    <Content Include="Content\windster-1.0.0\layouts\_default\dashboard.html" />
+    <Content Include="Content\windster-1.0.0\layouts\_default\examples.html" />
+    <Content Include="Content\windster-1.0.0\layouts\_default\main.html" />
+    <Content Include="Content\windster-1.0.0\layouts\_default\redirect.html" />
+    <Content Include="Content\windster-1.0.0\layouts\_default\single.html" />
+    <Content Include="Content\windster-1.0.0\postcss.config.js" />
+    <Content Include="Content\windster-1.0.0\public\android-chrome-192x192.png" />
+    <Content Include="Content\windster-1.0.0\public\android-chrome-512x512.png" />
+    <Content Include="Content\windster-1.0.0\public\app.bundle.js" />
+    <Content Include="Content\windster-1.0.0\public\app.css" />
+    <Content Include="Content\windster-1.0.0\public\apple-touch-icon.png" />
+    <Content Include="Content\windster-1.0.0\public\authentication\sign-in\index.html" />
+    <Content Include="Content\windster-1.0.0\public\authentication\sign-up\index.html" />
+    <Content Include="Content\windster-1.0.0\public\browserconfig.xml" />
+    <Content Include="Content\windster-1.0.0\public\e-commerce\products\index.html" />
+    <Content Include="Content\windster-1.0.0\public\favicon-16x16.png" />
+    <Content Include="Content\windster-1.0.0\public\favicon-32x32.png" />
+    <Content Include="Content\windster-1.0.0\public\favicon.ico" />
+    <Content Include="Content\windster-1.0.0\public\images\authentication\create-account.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\authentication\login.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\authentication\reset-password.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\blog\image-1.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\blog\image-2.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\blog\image-3.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\blog\image-4.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\blog\image-7.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\feed\image-1.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\feed\image-2.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ad.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ae.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\af.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ag.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ai.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\al.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\am.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\an.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ao.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ar.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\at.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\au.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\aw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ax.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\az.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ba.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bb.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bd.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\be.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bf.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bh.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bi.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bj.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bo.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\br.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bs.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bt.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\by.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\bz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ca.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\caf.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cas.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cd.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ceu.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cf.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ch.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ci.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cl.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cna.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\co.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\coc.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\csa.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cu.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cv.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cy.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\cz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\de.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\dj.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\dk.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\dm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\do.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\dz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ec.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ee.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\eg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\er.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\es.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\et.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\eu.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\fi.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\fj.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\fk.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\fm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\fr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ga.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gb.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gd.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ge.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gh.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gi.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gq.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gt.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\gy.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\hk.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\hn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\hr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ht.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\hu.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\id.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ie.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\il.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\im.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\in.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\iq.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ir.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\is.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\it.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\je.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\jm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\jo.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\jp.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ke.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\kg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\kh.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\km.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\kn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\kp.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\kr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\kw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ky.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\kz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\la.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\lb.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\lc.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\li.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\lk.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\lr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ls.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\lt.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\lu.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\lv.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ly.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ma.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mc.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\md.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\me.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mk.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ml.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mo.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ms.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mt.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mu.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mv.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mx.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\my.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\mz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\na.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ne.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ng.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ni.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\nl.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\no.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\np.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\nz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\om.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pa.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pe.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pf.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ph.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pk.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pl.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pt.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\pw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\py.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\qa.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ro.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\rs.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ru.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\rw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sa.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sb.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sc.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sd.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\se.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sh.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\si.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sk.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sl.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\so.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\st.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sv.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sy.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\sz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tc.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\td.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\th.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tj.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tl.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\to.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tr.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tt.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\tz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ua.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ug.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\us.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\uy.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\uz.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\vc.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ve.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\vg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\vn.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\vu.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ws.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ww.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\ye.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\za.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\zm.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\flags\zw.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\illustrations\404.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\illustrations\500.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\illustrations\maintenance.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\illustrations\sign-in.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\kanban\task-1.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\kanban\task-2.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\kanban\task-3.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\logo.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\og-image.jpg" />
+    <Content Include="Content\windster-1.0.0\public\images\products\apple-imac-1.png" />
+    <Content Include="Content\windster-1.0.0\public\images\products\apple-imac-2.png" />
+    <Content Include="Content\windster-1.0.0\public\images\products\apple-imac-3.png" />
+    <Content Include="Content\windster-1.0.0\public\images\themesberg.svg" />
+    <Content Include="Content\windster-1.0.0\public\images\users\bonnie-green-2x.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\bonnie-green.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\helene-engels.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\jese-leos-2x.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\jese-leos.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\joseph-mcfall.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\lana-byrd.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\leslie-livingston.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\michael-gough.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\neil-sims.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\robert-brown.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\roberta-casas-2x.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\roberta-casas.png" />
+    <Content Include="Content\windster-1.0.0\public\images\users\thomas-lean.png" />
+    <Content Include="Content\windster-1.0.0\public\index.html" />
+    <Content Include="Content\windster-1.0.0\public\mstile-150x150.png" />
+    <Content Include="Content\windster-1.0.0\public\pricing\index.html" />
+    <Content Include="Content\windster-1.0.0\public\robots.txt" />
+    <Content Include="Content\windster-1.0.0\public\safari-pinned-tab.svg" />
+    <Content Include="Content\windster-1.0.0\public\sitemap.xml" />
+    <Content Include="Content\windster-1.0.0\public\users\list\index.html" />
+    <Content Include="Content\windster-1.0.0\src\app.js" />
+    <Content Include="Content\windster-1.0.0\src\charts.js" />
+    <Content Include="Content\windster-1.0.0\src\sidebar.js" />
+    <Content Include="Content\windster-1.0.0\src\style.css" />
+    <Content Include="Content\windster-1.0.0\static\android-chrome-192x192.png" />
+    <Content Include="Content\windster-1.0.0\static\android-chrome-512x512.png" />
+    <Content Include="Content\windster-1.0.0\static\apple-touch-icon.png" />
+    <Content Include="Content\windster-1.0.0\static\browserconfig.xml" />
+    <Content Include="Content\windster-1.0.0\static\favicon-16x16.png" />
+    <Content Include="Content\windster-1.0.0\static\favicon-32x32.png" />
+    <Content Include="Content\windster-1.0.0\static\favicon.ico" />
+    <Content Include="Content\windster-1.0.0\static\images\authentication\create-account.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\authentication\login.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\authentication\reset-password.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\blog\image-1.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\blog\image-2.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\blog\image-3.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\blog\image-4.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\blog\image-7.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\feed\image-1.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\feed\image-2.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ad.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ae.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\af.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ag.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ai.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\al.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\am.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\an.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ao.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ar.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\at.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\au.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\aw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ax.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\az.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ba.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bb.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bd.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\be.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bf.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bh.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bi.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bj.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bo.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\br.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bs.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bt.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\by.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\bz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ca.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\caf.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cas.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cd.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ceu.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cf.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ch.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ci.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cl.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cna.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\co.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\coc.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\csa.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cu.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cv.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cy.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\cz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\de.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\dj.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\dk.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\dm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\do.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\dz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ec.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ee.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\eg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\er.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\es.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\et.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\eu.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\fi.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\fj.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\fk.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\fm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\fr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ga.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gb.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gd.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ge.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gh.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gi.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gq.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gt.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\gy.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\hk.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\hn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\hr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ht.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\hu.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\id.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ie.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\il.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\im.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\in.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\iq.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ir.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\is.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\it.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\je.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\jm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\jo.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\jp.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ke.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\kg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\kh.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\km.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\kn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\kp.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\kr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\kw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ky.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\kz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\la.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\lb.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\lc.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\li.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\lk.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\lr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ls.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\lt.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\lu.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\lv.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ly.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ma.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mc.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\md.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\me.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mk.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ml.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mo.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ms.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mt.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mu.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mv.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mx.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\my.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\mz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\na.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ne.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ng.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ni.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\nl.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\no.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\np.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\nz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\om.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pa.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pe.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pf.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ph.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pk.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pl.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pt.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\pw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\py.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\qa.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ro.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\rs.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ru.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\rw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sa.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sb.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sc.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sd.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\se.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sh.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\si.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sk.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sl.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\so.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\st.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sv.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sy.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\sz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tc.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\td.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\th.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tj.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tl.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\to.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tr.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tt.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\tz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ua.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ug.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\us.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\uy.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\uz.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\vc.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ve.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\vg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\vn.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\vu.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ws.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ww.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\ye.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\za.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\zm.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\flags\zw.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\illustrations\404.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\illustrations\500.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\illustrations\maintenance.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\illustrations\sign-in.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\kanban\task-1.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\kanban\task-2.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\kanban\task-3.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\logo.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\og-image.jpg" />
+    <Content Include="Content\windster-1.0.0\static\images\products\apple-imac-1.png" />
+    <Content Include="Content\windster-1.0.0\static\images\products\apple-imac-2.png" />
+    <Content Include="Content\windster-1.0.0\static\images\products\apple-imac-3.png" />
+    <Content Include="Content\windster-1.0.0\static\images\themesberg.svg" />
+    <Content Include="Content\windster-1.0.0\static\images\users\bonnie-green-2x.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\bonnie-green.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\helene-engels.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\jese-leos-2x.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\jese-leos.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\joseph-mcfall.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\lana-byrd.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\leslie-livingston.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\michael-gough.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\neil-sims.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\robert-brown.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\roberta-casas-2x.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\roberta-casas.png" />
+    <Content Include="Content\windster-1.0.0\static\images\users\thomas-lean.png" />
+    <Content Include="Content\windster-1.0.0\static\mstile-150x150.png" />
+    <Content Include="Content\windster-1.0.0\static\safari-pinned-tab.svg" />
+    <Content Include="Content\windster-1.0.0\syntax.css" />
+    <Content Include="Content\windster-1.0.0\tailwind.config.js" />
+    <Content Include="Content\windster-1.0.0\webpack.config.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\DataModels\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DataModels\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\LifeSure-1.0.0\img\Thumbs.db" />
+    <Content Include="Content\LifeSure-1.0.0\lib\owlcarousel\LICENSE" />
+    <Content Include="Content\LifeSure-1.0.0\lib\waypoints\links.php" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_accordion.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_card.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_close.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_containers.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_helpers.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_images.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_root.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_type.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="Content\LifeSure-1.0.0\scss\bootstrap\scss\_variables.scss" />
+    <EntityDeploy Include="Models\DataModels\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DataModels\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\windster-1.0.0\.github\workflows\hugo.yaml" />
+    <Content Include="Content\windster-1.0.0\.gitignore" />
+    <Content Include="Content\windster-1.0.0\.hugo_build.lock" />
+    <Content Include="Content\windster-1.0.0\config.yml" />
+    <Content Include="Content\windster-1.0.0\data\products.json" />
+    <Content Include="Content\windster-1.0.0\data\users.json" />
+    <Content Include="Content\windster-1.0.0\LICENSE.md" />
+    <Content Include="Content\windster-1.0.0\package.json" />
+    <Content Include="Content\windster-1.0.0\public\app.bundle.js.map" />
+    <Content Include="Content\windster-1.0.0\public\app.css.map" />
+    <Content Include="Content\windster-1.0.0\public\CNAME" />
+    <Content Include="Content\windster-1.0.0\public\site.webmanifest" />
+    <Content Include="Content\windster-1.0.0\README.md" />
+    <Content Include="Content\windster-1.0.0\static\CNAME" />
+    <Content Include="Content\windster-1.0.0\static\site.webmanifest" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\About\AboutList.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Contact\ContactList.cshtml" />
+    <Content Include="Views\Contact\AddContact.cshtml" />
+    <Content Include="Views\Contact\UpdateContact.cshtml" />
+    <Content Include="Views\Employee\EmployeeList.cshtml" />
+    <Content Include="Views\Employee\AddEmployee.cshtml" />
+    <Content Include="Views\Employee\UpdateEmployee.cshtml" />
+    <Content Include="Views\Feature\FeatureList.cshtml" />
+    <Content Include="Views\OtherFeature\OtherFeatureList.cshtml" />
+    <Content Include="Views\OtherFeature\AddOtherFeature.cshtml" />
+    <Content Include="Views\OtherFeature\UpdateOtherFeature.cshtml" />
+    <Content Include="Views\Testimonial\TestimonialList.cshtml" />
+    <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Feature.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\Employee.cshtml" />
+    <Content Include="Views\Home\Testimonial.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Spinner.cshtml" />
+    <Content Include="Views\Home\Navbar.cshtml" />
+    <Content Include="Views\Home\Scripts.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\TopPart.cshtml" />
+    <Content Include="Views\Home\OtherFeature.cshtml" />
+    <Content Include="Views\FAQAI\FAQAIList.cshtml" />
+    <Content Include="Views\FAQAI\GenerateAI.cshtml" />
+    <Content Include="Views\ServiceAI\GenerateImage.cshtml" />
+    <Content Include="Views\ServiceAI\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\AiImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\SharedResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\SharedResource.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>SharedResource.en.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52676</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

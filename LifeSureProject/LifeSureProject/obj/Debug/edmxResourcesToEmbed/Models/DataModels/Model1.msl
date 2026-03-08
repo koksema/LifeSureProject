@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LifeSureDbModelStoreContainer" CdmEntityContainer="LifeSureDbEntities">
+    <EntitySetMapping Name="TblAbout">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblAbout">
+        <MappingFragment StoreEntitySet="TblAbout">
+          <ScalarProperty Name="AboutId" ColumnName="AboutId" />
+          <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
+          <ScalarProperty Name="AboutDescription" ColumnName="AboutDescription" />
+          <ScalarProperty Name="AboutImageUrl" ColumnName="AboutImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblContact">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblContact">
+        <MappingFragment StoreEntitySet="TblContact">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEmployee">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblEmployee">
+        <MappingFragment StoreEntitySet="TblEmployee">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeePhoto" ColumnName="EmployeePhoto" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeTitle" ColumnName="EmployeeTitle" />
+          <ScalarProperty Name="EmployeeLinkedIn" ColumnName="EmployeeLinkedIn" />
+          <ScalarProperty Name="EmployeeInstagram" ColumnName="EmployeeInstagram" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblFeature">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblFeature">
+        <MappingFragment StoreEntitySet="TblFeature">
+          <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+          <ScalarProperty Name="FeatureTitle" ColumnName="FeatureTitle" />
+          <ScalarProperty Name="FeatureDescription" ColumnName="FeatureDescription" />
+          <ScalarProperty Name="FeatureOtherDescription" ColumnName="FeatureOtherDescription" />
+          <ScalarProperty Name="FeatureLink" ColumnName="FeatureLink" />
+          <ScalarProperty Name="VideoUrl" ColumnName="VideoUrl" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblOtherFeature">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblOtherFeature">
+        <MappingFragment StoreEntitySet="TblOtherFeature">
+          <ScalarProperty Name="OtherFeatureId" ColumnName="OtherFeatureId" />
+          <ScalarProperty Name="OtherFeatureIcon" ColumnName="OtherFeatureIcon" />
+          <ScalarProperty Name="OtherFeatureTitle" ColumnName="OtherFeatureTitle" />
+          <ScalarProperty Name="OtherFeatureDescription" ColumnName="OtherFeatureDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblQuestion">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblQuestion">
+        <MappingFragment StoreEntitySet="TblQuestion">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="QuestionTitle" ColumnName="QuestionTitle" />
+          <ScalarProperty Name="QuestionAnswer" ColumnName="QuestionAnswer" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblService">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblService">
+        <MappingFragment StoreEntitySet="TblService">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ServiceImg" ColumnName="ServiceImg" />
+          <ScalarProperty Name="ServiceIcon" ColumnName="ServiceIcon" />
+          <ScalarProperty Name="ServiceTitle" ColumnName="ServiceTitle" />
+          <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+          <ScalarProperty Name="ServiceQuestionTitle" ColumnName="ServiceQuestionTitle" />
+          <ScalarProperty Name="ServiceQuestionAnswer" ColumnName="ServiceQuestionAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblTestimonial">
+      <EntityTypeMapping TypeName="LifeSureDbModel.TblTestimonial">
+        <MappingFragment StoreEntitySet="TblTestimonial">
+          <ScalarProperty Name="TestimonialId" ColumnName="TestimonialId" />
+          <ScalarProperty Name="TestimonialImgUrl" ColumnName="TestimonialImgUrl" />
+          <ScalarProperty Name="TestimonialName" ColumnName="TestimonialName" />
+          <ScalarProperty Name="TestimonialTitle" ColumnName="TestimonialTitle" />
+          <ScalarProperty Name="TestimonialDescription" ColumnName="TestimonialDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

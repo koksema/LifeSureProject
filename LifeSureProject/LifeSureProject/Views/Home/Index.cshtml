@@ -1,0 +1,215 @@
+﻿@model LifeSureProject.ViewModels.LinkedinViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LifeSure - Life Insurance Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght-10..0,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="~/Content/LifeSure-1.0.0/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="~/Content/LifeSure-1.0.0/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="~/Content/LifeSure-1.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/LifeSure-1.0.0/css/style.css" rel="stylesheet">
+
+    <style>
+        .team-item img {
+            width: 100%;
+            height: 350px; 
+            object-fit: cover;
+            object-position: center;
+        }
+        .testimonial-item img {
+            width: 100% !important;
+            height: 250px !important;
+            object-fit: cover;
+            border-radius: 10px; 
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Spinner Start -->
+    @Html.Action("Spinner")
+    <!-- Spinner End -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex border-end border-primary pe-3">
+
+                            <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"> ( @Model.FollowersCount ) </i></a>
+                        </div>
+                        <div class="dropdown ms-3">
+                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown">
+                                <small>
+                                    <i class="fas fa-globe-europe text-primary me-2"></i>
+                                    @(System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "tr" ? Resources.SharedResource.Turkish : Resources.SharedResource.English)
+                                </small>
+                            </a>
+                            <div class="dropdown-menu rounded">
+                                <a href="@Url.Action("Change", "Language", new { lang = "en", returnUrl = Request.RawUrl })" class="dropdown-item">@Resources.SharedResource.English</a>
+                                <a href="@Url.Action("Change", "Language", new { lang = "tr", returnUrl = Request.RawUrl })" class="dropdown-item">@Resources.SharedResource.Turkish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar Start -->
+    @*@Html.Action("TopPart")*@
+
+    <!-- Topbar End -->
+    <!-- Navbar & Hero Start -->
+    @Html.Action("Navbar")
+    <!-- Navbar & Hero End -->
+    <!-- Modal Search Start -->
+    <!-- Modal Search End -->
+    <!-- Carousel Start -->
+    <!-- Carousel End -->
+    <!-- Feature Start -->
+    @Html.Action("Feature")
+    <!-- Feature End -->
+    @Html.Action("OtherFeature")
+    <!-- About Start -->
+    @Html.Action("About", "Home")
+
+
+    <!-- About End -->
+    <!-- Service Start -->
+    @Html.Action("Service")
+
+    <!-- Service End -->
+    <!-- FAQs Start -->
+    @Html.Action("FAQ")
+
+    <!-- FAQs End -->
+    <!-- Blog Start -->
+    <div class="container-fluid blog py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Blogdan Haberler</h4>
+                <h1 class="display-4 mb-4">Haberler ve Güncellemeler</h1>
+                <p class="mb-0">
+                    Sigorta dünyasındaki en son gelişmeleri, faydalı bilgileri ve müşterilerimize özel güncellemeleri buradan takip edebilirsiniz.
+                    LifeSure olarak sizi bilgilendiren, rehberlik eden ve hayatınızı kolaylaştıran içerikler sunuyoruz.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="~/Content/LifeSure-1.0.0/img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Sigorta</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+                            <div class="blog-comment d-flex justify-content-between mb-3">
+                                <div class="small"><span class="fa fa-user text-primary"></span> Yönetici</div>
+                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Aralık 2025</div>
+                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Yorum</div>
+                            </div>
+                            <a href="#" class="h4 d-inline-block mb-3">Hayat Sigortası Seçerken Önemli Noktalar</a>
+                            <p class="mb-3">
+                                Hayat sigortası seçiminde kapsam, teminat tutarı ve ödeme koşulları büyük önem taşır.
+                                Size en uygun poliçeyi seçmek için dikkat edilmesi gereken temel noktaları keşfedin.
+                            </p>
+                            <a href="#" class="btn p-0">Devamını Oku <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="~/Content/LifeSure-1.0.0/img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Güncellemeler</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+                            <div class="blog-comment d-flex justify-content-between mb-3">
+                                <div class="small"><span class="fa fa-user text-primary"></span> Yönetici</div>
+                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Aralık 2025</div>
+                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Yorum</div>
+                            </div>
+                            <a href="#" class="h4 d-inline-block mb-3">Yeni nesil sigorta çözümleri ile geleceğinizi koruyun</a>
+                            <p class="mb-3">
+                                Değişen yaşam koşullarına uyum sağlayan esnek sigorta planlarımız sayesinde
+                                hem kendinizi hem de sevdiklerinizi daha güvenli bir geleceğe hazırlayabilirsiniz.
+                            </p>
+                            <a href="#" class="btn p-0">Devamını Oku <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="~/Content/LifeSure-1.0.0/img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Rehber</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+                            <div class="blog-comment d-flex justify-content-between mb-3">
+                                <div class="small"><span class="fa fa-user text-primary"></span> Yönetici</div>
+                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Aralık 2025</div>
+                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Yorum</div>
+                            </div>
+                            <a href="#" class="h4 d-inline-block mb-3">Sigorta yaptırmanın aile bütçesine katkıları</a>
+                            <p class="mb-3">
+                                Beklenmedik durumlara karşı önceden önlem almak, uzun vadede maddi kayıpların önüne geçer.
+                                Sigortanın aile bütçesine sağladığı avantajları daha yakından inceleyin.
+                            </p>
+                            <a href="#" class="btn p-0">Devamını Oku <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog Bitiş -->
+    <!-- Blog End -->
+    <!-- Team Start -->
+    @Html.Action("Employee")
+
+    <!-- Team End -->
+    <!-- Testimonial Start -->
+    @Html.Action("Testimonial")
+
+    <!-- Testimonial End -->
+    <!-- Footer Start -->
+    @Html.Action("Contact")
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    <!-- JavaScript Libraries -->
+    @Html.Action("Scripts")
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblEmployee>
+
+@{
+    ViewBag.Title = "Ekibimiz";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="w-full">
+
+    <div class="flex justify-between items-center mb-6">
+
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-800">Ekibimiz</h1>
+            <p class="text-sm text-gray-500">Çalışanları görüntüleyebilir, güncelleyebilir veya silebilirsin.</p>
+        </div>
+
+        <a href="@Url.Action("AddEmployee","Employee")"
+           class="bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-cyan-700 flex items-center gap-2">
+            <i class="fa-solid fa-plus"></i>
+            Yeni Çalışan
+        </a>
+
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+
+        <table class="w-full">
+
+            <thead class="bg-gray-50 border-b">
+
+                <tr>
+                    <th class="text-left px-5 py-3 text-xs text-gray-500 uppercase">ID</th>
+                    <th class="text-left px-5 py-3 text-xs text-gray-500 uppercase">Fotoğraf</th>
+                    <th class="text-left px-5 py-3 text-xs text-gray-500 uppercase">İsim</th>
+                    <th class="text-left px-5 py-3 text-xs text-gray-500 uppercase">Pozisyon</th>
+                    <th class="text-left px-5 py-3 text-xs text-gray-500 uppercase">Sosyal Medya</th>
+                    <th class="text-right px-5 py-3 text-xs text-gray-500 uppercase">İşlemler</th>
+                </tr>
+
+            </thead>
+
+            <tbody class="divide-y">
+
+                @foreach (var item in Model)
+                {
+                    <tr class="hover:bg-gray-50">
+
+                        <td class="px-5 py-4">
+                            @item.EmployeeId
+                        </td>
+
+                        <td class="px-5 py-4">
+                            <img src="@item.EmployeePhoto"
+                                 class="w-12 h-12 rounded-full object-cover border" />
+                        </td>
+
+                        <td class="px-5 py-4 font-medium">
+                            @item.EmployeeName
+                        </td>
+
+                        <td class="px-5 py-4 text-gray-600">
+                            @item.EmployeeTitle
+                        </td>
+
+                        <td class="px-5 py-4 flex gap-3 text-lg text-gray-600">
+
+                            @if (!string.IsNullOrEmpty(item.EmployeeInstagram))
+                            {
+                                <a href="@item.EmployeeInstagram" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            }
+
+                            @if (!string.IsNullOrEmpty(item.EmployeeLinkedIn))
+                            {
+                                <a href="@item.EmployeeLinkedIn" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            }
+
+                        </td>
+
+                        <td class="px-5 py-4 text-right">
+
+                            <a href="@Url.Action("UpdateEmployee","Employee", new { id = item.EmployeeId })"
+                               class="border px-3 py-2 rounded-lg text-sm hover:bg-gray-50 mr-2">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                Düzenle
+                            </a>
+
+                            <a href="@Url.Action("DeleteEmployee","Employee", new { id = item.EmployeeId })"
+                               onclick="return confirm('Silmek istediğine emin misin?');"
+                               class="border border-red-200 bg-red-50 text-red-600 px-3 py-2 rounded-lg text-sm hover:bg-red-100">
+                                <i class="fa-regular fa-trash-can"></i>
+                                Sil
+                            </a>
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

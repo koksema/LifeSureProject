@@ -1,0 +1,51 @@
+﻿@model LifeSureProject.Models.DataModels.TblEmployee
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="max-w-3xl">
+
+    <h1 class="text-2xl font-semibold mb-6">Çalışan Güncelle</h1>
+
+    @using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+    {
+
+        @Html.HiddenFor(x => x.EmployeeId)
+
+        <div class="bg-white p-6 rounded-xl shadow border space-y-5">
+
+            <div>
+                <label class="text-sm font-semibold">İsim</label>
+                @Html.TextBoxFor(x => x.EmployeeName, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <div>
+                <label class="text-sm font-semibold">Pozisyon</label>
+                @Html.TextBoxFor(x => x.EmployeeTitle, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <div>
+                <label class="text-sm font-semibold">Fotoğraf URL</label>
+                @Html.TextBoxFor(x => x.EmployeePhoto, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <div>
+                <label class="text-sm font-semibold">Instagram</label>
+                @Html.TextBoxFor(x => x.EmployeeInstagram, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <div>
+                <label class="text-sm font-semibold">LinkedIn</label>
+                @Html.TextBoxFor(x => x.EmployeeLinkedIn, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <button class="bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700">
+                Güncelle
+            </button>
+
+        </div>
+
+    }
+
+</div>

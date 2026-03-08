@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LifeSureDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TblAbout">
+    <Key>
+      <PropertyRef Name="AboutId" />
+    </Key>
+    <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AboutTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AboutDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblContact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeLinkedIn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeInstagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblFeature">
+    <Key>
+      <PropertyRef Name="FeatureId" />
+    </Key>
+    <Property Name="FeatureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FeatureTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FeatureDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FeatureOtherDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FeatureLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VideoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblOtherFeature">
+    <Key>
+      <PropertyRef Name="OtherFeatureId" />
+    </Key>
+    <Property Name="OtherFeatureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OtherFeatureIcon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OtherFeatureTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherFeatureDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblQuestion">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QuestionAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblService">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceIcon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceQuestionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceQuestionAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblTestimonial">
+    <Key>
+      <PropertyRef Name="TestimonialId" />
+    </Key>
+    <Property Name="TestimonialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestimonialImgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TestimonialName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestimonialTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestimonialDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="LifeSureDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblAbout" EntityType="Self.TblAbout" />
+    <EntitySet Name="TblContact" EntityType="Self.TblContact" />
+    <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" />
+    <EntitySet Name="TblFeature" EntityType="Self.TblFeature" />
+    <EntitySet Name="TblOtherFeature" EntityType="Self.TblOtherFeature" />
+    <EntitySet Name="TblQuestion" EntityType="Self.TblQuestion" />
+    <EntitySet Name="TblService" EntityType="Self.TblService" />
+    <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" />
+  </EntityContainer>
+</Schema>

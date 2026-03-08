@@ -1,0 +1,97 @@
+﻿@* Views/About/UpdateAbout.cshtml *@
+@model LifeSureProject.Models.DataModels.TblAbout
+
+@{
+    ViewBag.Title = "Update About";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+ }
+
+<div class="mb-6">
+    <h1 class="text-2xl font-semibold text-gray-800">Hakkımızda Güncelle</h1>
+    <p class="text-sm text-gray-500 mt-1">Alanları düzenleyip kaydedebilirsin.</p>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Form -->
+    <div class="lg:col-span-2">
+        <div class="rounded-xl border border-gray-200 bg-white shadow-sm p-6">
+            @using (Html.BeginForm("UpdateAbout", "About", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.AboutId)
+
+                <div class="mb-5">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Başlık</label>
+                    @Html.TextBoxFor(x => x.AboutTitle, new
+                    {
+                        @class = "w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 " +
+                                 "focus:outline-none focus:ring-2 focus:ring-cyan-600/30 focus:border-cyan-500",
+                        placeholder = "Başlık giriniz"
+                    })
+                </div>
+
+                <div class="mb-5">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Açıklama</label>
+                    @Html.TextAreaFor(x => x.AboutDescription, 6, 0, new
+                    {
+                        @class = "w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 " +
+                                 "focus:outline-none focus:ring-2 focus:ring-cyan-600/30 focus:border-cyan-500",
+                        placeholder = "Açıklama giriniz"
+                    })
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Görsel URL</label>
+                    @Html.TextBoxFor(x => x.AboutImageUrl, new
+                    {
+                        @class = "w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 " +
+                                 "focus:outline-none focus:ring-2 focus:ring-cyan-600/30 focus:border-cyan-500",
+                        placeholder = "https://..."
+                    })
+                    <p class="text-xs text-gray-500 mt-2">Bir resim linki girersen sağda önizleme görünür.</p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button type="submit"
+                            class="inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-cyan-700 transition">
+                        <i class="fa-regular fa-floppy-disk"></i>
+                        Kaydet
+                    </button>
+
+                    <a href="/About/AboutList"
+                       class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Listeye Dön
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Preview -->
+    <div>
+        <div class="rounded-xl border border-gray-200 bg-white shadow-sm p-6">
+            <h2 class="text-sm font-semibold text-gray-800">Önizleme</h2>
+            <p class="text-xs text-gray-500 mt-1">Görsel URL doluysa aşağıda gösterilir.</p>
+
+            <div class="mt-4">
+                @if (!string.IsNullOrWhiteSpace(Model.AboutImageUrl))
+                {
+                    <img src="@Model.AboutImageUrl"
+                         alt="Preview"
+                         class="w-full h-48 rounded-xl object-cover border border-gray-200" />
+                }
+                else
+                {
+                    <div class="w-full h-48 rounded-xl border border-dashed border-gray-300 grid place-items-center text-gray-400 text-sm">
+                        Görsel yok
+                    </div>
+                }
+            </div>
+
+            <div class="mt-4">
+                <p class="text-sm font-semibold text-gray-900">@Model?.AboutTitle</p>
+                <p class="text-sm text-gray-600 mt-2 whitespace-pre-line">@Model?.AboutDescription</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model LifeSureProject.Models.DataModels.TblTestimonial
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="max-w-3xl">
+
+    <h1 class="text-2xl font-semibold mb-6">Referans Güncelle</h1>
+
+    @using (Html.BeginForm("UpdateTestimonial", "Testimonial", FormMethod.Post))
+    {
+
+        @Html.HiddenFor(x => x.TestimonialId)
+
+        <div class="bg-white p-6 rounded-xl shadow border space-y-5">
+
+            <div>
+                <label class="text-sm font-semibold">İsim</label>
+                @Html.TextBoxFor(x => x.TestimonialName, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <div>
+                <label class="text-sm font-semibold">Unvan</label>
+                @Html.TextBoxFor(x => x.TestimonialTitle, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <div>
+                <label class="text-sm font-semibold">Açıklama</label>
+                @Html.TextAreaFor(x => x.TestimonialDescription, new { @class = "w-full border rounded-lg px-4 py-2 mt-1", rows = 4 })
+            </div>
+
+            <div>
+                <label class="text-sm font-semibold">Görsel URL</label>
+                @Html.TextBoxFor(x => x.TestimonialImgUrl, new { @class = "w-full border rounded-lg px-4 py-2 mt-1" })
+            </div>
+
+            <button class="bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700">
+                Güncelle
+            </button>
+
+        </div>
+
+    }
+
+</div>

@@ -1,0 +1,103 @@
+﻿@model LifeSureProject.ViewModels.FAQViewModel
+@{
+    ViewBag.Title = "AI SSS Oluşturucu";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5">
+    <div class="mb-1 w-100">
+        <div class="mb-4">
+            <h1 class="text-xl sm:text-2xl font-semibold text-gray-900">🧠 AI SSS Tasarım Merkezi</h1>
+            <p class="text-sm text-gray-500">Soru ve cevaplarınızı yapay zeka ile profesyonelce oluşturun.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-col m-4">
+    <div class="overflow-x-auto">
+        <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden shadow-lg rounded-lg border border-gray-200 bg-white p-6">
+
+                @using (Html.BeginForm("GenerateAI", "FAQAI", FormMethod.Post, new { id = "aiForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="mb-6">
+                        <label for="QuestionTitle" class="block mb-2 text-sm font-medium text-gray-700">Hizmet Başlığı (Konu)</label>
+                        @Html.TextBoxFor(m => m.QuestionTitle, new
+                        {
+                            @class = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5",
+                            placeholder = "Örn: Sağlık Sigortası Avantajları"
+                        })
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="Question" class="block mb-2 text-sm font-medium text-gray-700">Oluşturulan Soru</label>
+                        @Html.TextAreaFor(m => m.Question, new
+                        {
+                            @class = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5",
+                            placeholder = "Yapay zeka tarafından üretilen soru burada görünecek...",
+                            rows = "2"
+                        })
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="QuestionAnswer" class="block mb-2 text-sm font-medium text-gray-700">Görsel Betimlemesi (AI Cevabı)</label>
+                        @Html.TextAreaFor(m => m.QuestionAnswer, new
+                        {
+                            @class = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5",
+                            placeholder = "Kurumsal cevap burada görünecek...",
+                            rows = "4"
+                        })
+                        <p class="mt-2 text-xs text-gray-400">* AI tarafından üretilen içerikleri kontrol etmeniz önerilir.</p>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button type="submit" name="submitType" value="SoruOlustur"
+                                    class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all">
+                                <i class="fa fa-robot mr-2"></i> Soru Üret
+                            </button>
+
+                            <button type="submit" name="submitType" value="CevapOlustur"
+                                    @(string.IsNullOrEmpty(Model.Question) ? "disabled" : "")
+                                    class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all disabled:opacity-50">
+                                <i class="fa fa-pen-fancy mr-2"></i> Cevap Oluştur
+                            </button>
+                        </div>
+
+                        @* Veritabanına Kaydet Butonu - Sadece Soru ve Cevap doluyken aktif olur *@
+                        <div class="mt-4 border-t border-gray-100 pt-6">
+                            <button type="submit" name="submitType" value="VeritabaninaKaydet"
+                                    @(string.IsNullOrEmpty(Model.QuestionAnswer) ? "disabled" : "")
+                                    class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-200 font-bold rounded-lg text-sm px-5 py-3 text-center transition-all disabled:opacity-50 shadow-md">
+                                <i class="fa fa-save mr-2"></i> Bu Soru-Cevabı Sisteme Kaydet
+                            </button>
+                        </div>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(Model.DebugMessage))
+                {
+                    <div class="mt-6 p-4 bg-red-50 text-red-700 rounded-lg text-xs font-mono border border-red-100">
+                        <strong>Log:</strong> @Model.DebugMessage
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $('#aiForm').on('submit', function () {
+            var btn = $(this).find('button[type="submit"]:focus');
+            // Eğer "Kaydet" butonuna basıldıysa farklı bir loading metni gösterelim
+            var loadingText = btn.val() === "VeritabaninaKaydet" ? "Kaydediliyor..." : "Hazırlanıyor...";
+
+            btn.html('<i class="fa fa-circle-notch fa-spin mr-2"></i> ' + loadingText);
+            $('button').addClass('opacity-50 pointer-events-none');
+        });
+    });
+</script>

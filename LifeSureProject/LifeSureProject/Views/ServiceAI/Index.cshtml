@@ -1,0 +1,176 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblService>
+@{
+    ViewBag.Title = "Hizmetler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    /* Temiz ve Hatasız CSS */
+    .svc-container {
+        padding: 20px;
+    }
+
+    .svc-header-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #f3f4f6;
+        padding-bottom: 15px;
+    }
+
+        .svc-header-area h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin: 0;
+        }
+
+    /* Admin Teması Mavi Buton */
+    .btn-admin-blue {
+        background-color: #1e40af; /* Windster Koyu Mavi */
+        color: #ffffff !important;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.3s;
+    }
+
+        .btn-admin-blue:hover {
+            background-color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+        }
+
+    .svc-card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .svc-item {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        width: calc(33.333% - 14px);
+        min-width: 280px;
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+
+        .svc-item:hover {
+            transform: translateY(-5px);
+        }
+
+    .svc-img-box {
+        height: 190px;
+        background: #f9fafb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+        .svc-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .svc-info {
+        padding: 18px;
+    }
+
+    .svc-name {
+        font-size: 17px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .svc-btns {
+        display: flex;
+        gap: 8px;
+    }
+
+    .svc-link {
+        flex: 1;
+        padding: 9px;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    /* Daha Soft Renkler */
+    .svc-link-ai {
+        background: #f0f9ff;
+        color: #0369a1;
+        border: 1px solid #e0f2fe;
+    }
+
+    .svc-link-edit {
+        background: #f8fafc;
+        color: #475569;
+        border: 1px solid #e2e8f0;
+    }
+
+    .svc-link:hover {
+        opacity: 0.8;
+    }
+</style>
+
+<div class="svc-container">
+    <div class="svc-header-area">
+        <div>
+            <h2>Hizmet Katalogu</h2>
+        </div>
+        <a href="@Url.Action("GenerateImage","ServiceAI")" class="btn-admin-blue">
+            <i class="fas fa-plus"></i> Yeni Hizmet Tanımla
+        </a>
+    </div>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <div style="padding: 50px; text-align: center; background: white; border: 1px solid #e5e7eb; border-radius: 12px;">
+            <p style="color: #9ca3af; margin: 0;">Görüntülenecek hizmet kaydı bulunamadı.</p>
+        </div>
+    }
+    else
+    {
+        <div class="svc-card-grid">
+            @foreach (var item in Model)
+            {
+                <div class="svc-item">
+                    <div class="svc-img-box">
+                        @if (item != null && !string.IsNullOrEmpty(item.ServiceImg))
+                        {
+                            <img src="@Url.Content(item.ServiceImg)" alt="@item.ServiceTitle" />
+                        }
+                        else
+                        {
+                            <i class="@(item != null ? item.ServiceIcon : "fas fa-image")" style="font-size: 45px; color: #d1d5db;"></i>
+                        }
+                    </div>
+
+                    <div class="svc-info">
+                        <span class="svc-name">@(item != null ? item.ServiceTitle : "İsimsiz Hizmet")</span>
+
+                        <div class="svc-btns">
+                            <a href="@Url.Action("GenerateImage","ServiceAI", new { id = item.ServiceId })" class="svc-link svc-link-ai">
+                                <i class="fas fa-sync-alt"></i> Görseli Yenile
+                            </a>
+                            <a href="@Url.Action("Edit","Service", new { id = item.ServiceId })" class="svc-link svc-link-edit">
+                                <i class="fas fa-cog"></i> Detayları Yönet
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
